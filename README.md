@@ -16,4 +16,9 @@ ldd --version
 gcc -Wall -save-temps print.c -o print
 # trace system call and signals
 strace programname
+# explore ELF file
+readelf -l programname
+# get ld search path
+ld --verbose
+ldconfig --verbose
 ```
