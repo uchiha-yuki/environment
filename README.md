@@ -54,4 +54,8 @@ sudo gbedi *.deb
 sudo dpkg -i *.deb
 # remove package
 sudo dpkg -r package name
+# create shortcut for command
+alias shortcut=command
+# check what a shortcut is
+type command
 ```

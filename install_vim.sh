@@ -19,8 +19,16 @@ fi
 cd .tmp
 git clone https://github.com/nschloe/vim.git
 cd vim 
-./configure --enable-pythoninterp "--with-python-config-dir=$config_path"
+read -p "choose a version to be installed" VERSION
+git checkout "$VERSION"
+./configure --prefix=/usr/local --enable-pythoninterp "--with-python-config-dir=$config_path"
 make
-make install
-
+sudo checkinstall make install
 rm -rf ../vim
+
+read -p "do you want to make vim $VERSION only for yourself: " key
+if [ "$key" == "y" ]; then
+	sudo mv /usr/local/bin/vim "/usr/local/bin/vim$VERSION"
+	cd
+	echo "alias vim=/usr/local/bin/vim$VERSION" >> .bashrc	
+fi
