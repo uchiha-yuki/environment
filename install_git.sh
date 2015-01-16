@@ -8,7 +8,7 @@ fi
 cd .tmp
 git clone https://github.com/git/git.git
 cd git
-git --tags --decorate --simplify-by-decorate
+git log --tags --decorate --simplify-by-decorate
 read -p "choose a version to be installed" VERSION
 git checkout "$VERSION"
 make prefix=/usr/local all doc info
