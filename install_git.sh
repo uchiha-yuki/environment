@@ -8,8 +8,8 @@ fi
 cd .tmp
 git clone https://github.com/git/git.git
 cd git
-git log --tags --decorate --simplify-by-decorate
-read -p "choose a version to be installed" VERSION
+git log --tags --decorate --simplify-by-decoration --oneline
+read -p "choose a version to be installed: " VERSION
 git checkout "$VERSION"
 make prefix=/usr/local all doc info
 sudo checkinstall make prefix=/usr/local install install-doc install-html install-info

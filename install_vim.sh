@@ -19,8 +19,8 @@ fi
 cd .tmp
 git clone https://github.com/nschloe/vim.git
 cd vim 
-git log --tags --decorate --simplify-by-decorate
-read -p "choose a version to be installed" VERSION
+git log --tags --decorate --simplify-by-decoration --oneline
+read -p "choose a version to be installed: " VERSION
 git checkout "$VERSION"
 ./configure --prefix=/usr/local --enable-pythoninterp "--with-python-config-dir=$config_path"
 make
