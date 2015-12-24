@@ -1,6 +1,6 @@
 ## DESCRIPTION
 
-* This file lists some useful linux commands with comments
+This file lists some useful linux commands with comments
 
 ## USEFUL COMMANDS
 
